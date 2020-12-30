@@ -1,9 +1,9 @@
 :root {
-  --primary: #d0b280;
-  --secondary: #a84600;
-  --tertiary: #8c8c8c;
-  --light-dark: #973529;
-  --dark: #2a334f;
+  --primary: #F7F7FF;
+  --secondary: #FE5F55;
+  --tertiary: #BDD5EA;
+  --light-dark: #577399;
+  --dark: #495867;
   --border-radius: 0.3rem;
 }
 
@@ -15,7 +15,7 @@ body {
   background-color: var(--primary);
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', serif;
+  font-family: 'Brush Script MT', cursive;
   color: var(--dark);
   line-height: 1.5;
   font-size: 16px;
