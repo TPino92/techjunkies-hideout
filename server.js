@@ -1,8 +1,11 @@
 const path = require("path");
+// for the server framework, let's use express
 const express = require("express");
+// for the login session
 const session = require("express-session");
+// for the front end
 const exphbs = require("express-handlebars");
-
+// because this is the first place we encode, we'll require dotenv right from the start
 require('dotenv').config();
 
 const app = express();

@@ -1,7 +1,7 @@
 {
   "name": "tech-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "<!-- error msg --> PS C:\\Users\\Trevor Pino\\Desktop\\techjunkies-hideout> npm run start",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/TPino92/techjunkies-hideout.git"
   },
-  "author": "",
+  "author": "Trevor J Pino",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TPino92/techjunkies-hideout/issues"
@@ -27,5 +27,6 @@
     "express-session": "^1.17.0",
     "mysql2": "^2.0.1",
     "sequelize": "^5.21.2"
-  }
+  },
+  "devDependencies": {}
 }
