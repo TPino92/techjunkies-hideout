@@ -1,22 +1,16 @@
-const path = require("path");
-// server framework
+  const path = require("path");
 const express = require("express");
-// login session
 const session = require("express-session");
-// front end
 const exphbs = require("express-handlebars");
-
-require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-// database configuration
+
 const sequelize = require("./config/config");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// As the user is logged in the session is made private with use of dotenv
 const sess = {
-  secret: process.env.Server_PW,
+  secret: "Super secret secret",
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -27,7 +21,6 @@ const sess = {
 
 app.use(session(sess));
 
-// helpers formatting dates 
 const hbs = exphbs.create({
   helpers: {
     format_date: date => {
@@ -35,17 +28,16 @@ const hbs = exphbs.create({
     }
   }
 });
-// front end
+
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-// routes
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(require('./controllers/'));
-// sequelize begins, handles the databases. 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}!`);
-  sequelize.sync({ force: false });
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
 });
