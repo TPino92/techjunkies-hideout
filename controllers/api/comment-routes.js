@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Comment } = require("../../models/");
+const { Comment } = require("../../models/Grape");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, (req, res) => {
